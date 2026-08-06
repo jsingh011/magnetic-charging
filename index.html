@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnetic Charging Technology: Comprehensive Research</title>
+  <style>
+    :root {
+      --primary: #0071e3;
+      --primary-hover: #005bb5;
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --text: #1d1d1f;
+      --text-muted: #86868b;
+      --border: #d2d2d7;
+      --accent-red: #ff3b30;
+      --accent-green: #34c759;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Tabs */
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      border: none;
+      background: var(--bg);
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .data-table th, .data-table td {
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .data-table th {
+      background-color: var(--bg);
+      font-weight: 600;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* QA Cards */
+    .qa-item {
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .qa-question {
+      background: var(--bg);
+      padding: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .qa-answer {
+      padding: 1rem;
+      background: white;
+      display: none;
+    }
+
+    .qa-item.open .qa-answer {
+      display: block;
+    }
+
+    /* References */
+    .reference-list {
+      list-style-type: none;
+    }
+
+    .reference-list li {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      text-indent: -2rem;
+      font-size: 0.95rem;
+    }
+
+    .reference-list a {
+      color: var(--primary);
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">Magnetic Charging Tech</div>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#materials">Materials & Developers</a>
+        <a href="#applications">Applications</a>
+        <a href="#drivers">Drivers & Evolution</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="hero" id="overview">
+      <h1>Magnetic Charging Technology</h1>
+      <p>Magnetic charging uses strong magnets to align power transmitters with device receivers, snapping right into position automatically to allow fast, safe, and effortless battery charging without relying on a traditional plug-in physical port.</p>
+    </div>
+
+    <section id="how-it-works">
+      <h2>How The Technology Works</h2>
+      <p>There are two primary types of magnetic charging systems: <strong>Wired Magnetic Charging</strong> and <strong>Wireless Magnetic Charging</strong>.</p>
+      
+      <div class="tab-buttons" style="margin-top: 15px;">
+        <button class="tab-btn active" onclick="switchTab('wired')">Wired Magnetic Charging</button>
+        <button class="tab-btn" onclick="switchTab('wireless')">Wireless Magnetic Charging</button>
+      </div>
+
+      <div id="wired" class="tab-content active">
+        <p>Wired magnetic systems do not use wireless induction; instead, they use direct metal-to-metal contact pins held together by magnet strength. Spring-loaded Pogo Pins feature gold-plated physical pins backed by micro-springs, allowing the cable to snap in place. The magnet holds tight enough for high-wattage electricity (up to 140W) to flow through directly, but breaks cleanly if tripped on, preventing damage.</p>
+        
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Physical Description</th>
+              <th>Core Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Spring-loaded Pogo Pins</strong></td>
+              <td>Gold-plated metal contact pins, backed by micro-springs.</td>
+              <td>Creates a direct metal-to-metal contact for electricity to flow through.</td>
+            </tr>
+            <tr>
+              <td><strong>Neodymium Block Magnets</strong></td>
+              <td>Small magnets mounted on the sides of the pins.</td>
+              <td>Holds the cable tightly together with the device port.</td>
+            </tr>
+            <tr>
+              <td><strong>Metal/Aluminium Outer Shell</strong></td>
+              <td>Tough metal or aluminium shell surrounding the plug tip.</td>
+              <td>Protects delicate pogo pins from getting damaged.</td>
+            </tr>
+            <tr>
+              <td><strong>Power Delivery (PD) Controller</strong></td>
+              <td>Small microchips inside cable head & laptop motherboard.</td>
+              <td>Allows high-voltage (140W) fast charging safely without overloading circuits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="wireless" class="tab-content">
+        <p>Wireless magnets transfer energy through <strong>Electromagnetic Induction</strong>. A copper coil in the pad uses AC power from an outlet to create an invisible, pulsing magnetic field. The internal copper coil in the phone catches this field, forcing electrons to move and create a circuit that charges the battery. A magnetic ring ensures the phone sticks securely without falling off.</p>
+        
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Physical Description</th>
+              <th>Core Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Transmitter Coil</strong></td>
+              <td>Flat coil of tightly wound copper wire in charger base.</td>
+              <td>Receives AC power from the wall outlet and converts it into a magnetic field.</td>
+            </tr>
+            <tr>
+              <td><strong>Receiver Coil</strong></td>
+              <td>Flat copper coil mounted behind the glass back of the phone.</td>
+              <td>Captures the magnetic field and turns it back to electricity to charge the battery.</td>
+            </tr>
+            <tr>
+              <td><strong>Neodymium Alignment Ring</strong></td>
+              <td>Circular ring of strong permanent magnets (N52-grade).</td>
+              <td>Snaps the phone into the right place and holds it securely.</td>
+            </tr>
+            <tr>
+              <td><strong>Ferrite Shielding Plate</strong></td>
+              <td>Thin metal/ceramic disc placed behind copper coils.</td>
+              <td>Directs magnetic field forward and shields internal electronics (cameras, compasses) from interference.</td>
+            </tr>
+            <tr>
+              <td><strong>Wireless Power Chipset</strong></td>
+              <td>Microchips built into charger and phone.</td>
+              <td>Manages safe power levels, controls heat, and converts AC into Direct Current (DC).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="materials">
+      <h2>Materials & Key Developers</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Key Construction Materials</h3>
+          <ul>
+            <li><strong>Neodymium:</strong> Creates strong permanent magnets.</li>
+            <li><strong>Highest Purity Copper:</strong> Used for internal coils/wiring for top conductivity.</li>
+            <li><strong>Gold-Plated Brass:</strong> Used on pogo pins to pass power fast without rusting.</li>
+            <li><strong>Ferrite & Steel:</strong> Backplates to direct fields forward and shield components.</li>
+            <li><strong>Silicon:</strong> Smart microchips controlling power flow and thermal safety.</li>
+            <li><strong>Aluminium & Plastics:</strong> Outer casings and cables for heat protection.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Key Developers & Companies</h3>
+          <ul>
+            <li><strong>Apple Inc.:</strong> Pioneer & key innovator of consumer magnetic charging.</li>
+            <li><strong>Wireless Power Consortium (WPC):</strong> Global governing body for standards.</li>
+            <li><strong>Belkin International:</strong> Primary hardware developer & launch partner.</li>
+            <li><strong>Anker Innovations:</strong> Global leader in battery technology & fast charging.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications">
+      <h2>Current & Potential Applications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Current Applications</h3>
+          <ul>
+            <li><strong>Smartphones & Accessories:</strong> Wireless charging and magnetic snaps for wallets, mounts, and power banks.</li>
+            <li><strong>Smartwatches & Trackers:</strong> Compact magnetic discs for effortless watch charging.</li>
+            <li><strong>Laptops:</strong> High-power breakaway magnetic cords (e.g., MagSafe 3).</li>
+            <li><strong>Car Dashboards:</strong> In-vehicle magnetic charging pads (e.g., Nissan) for secure docking on roads.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Potential Applications</h3>
+          <ul>
+            <li><strong>Electric Vehicles (EVs):</strong> Wireless ground pads to charge cars simply by parking.</li>
+            <li><strong>Medical Implants:</strong> Transcutaneous charging for pacemakers and insulin pumps through the skin.</li>
+            <li><strong>Robots & Warehouses:</strong> Autonomous docking and recharging for factory robots.</li>
+            <li><strong>Smart Furniture:</strong> Hidden charging points integrated into coffee shop tables and desks.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="drivers">
+      <h2>Evolution, Drivers & Factors</h2>
+      <p><strong>Timeline of Evolution:</strong> Started in 2006 with Apple's wired MacBook charger, built to safely disconnect if tripped on. Wireless charging arrived in 2008 (Qi) but lacked magnets, leading to misaligned coils and energy lost as heat. In 2020, magnetic rings were added around wireless coils for perfect physical alignment. Today, this has evolved into the universal <strong>Qi2</strong> standard.</p>
+      <br>
+      <div class="grid">
+        <div class="card">
+          <h3>Problems Addressed</h3>
+          <p>Stops energy waste and overheating, protects ports and cables from physical wear and tear, removes the hassle of manual plug-in, and eliminates trip hazards.</p>
+        </div>
+        <div class="card">
+          <h3>Main Motivations</h3>
+          <p>The core motivations were to stop heat energy waste (which ruins battery lifespan), prevent cable/port wear, and improve overall device safety.</p>
+        </div>
+        <div class="card">
+          <h3>Influencing Factors</h3>
+          <p><strong>Social, Economic & Environmental:</strong> Driven by convenience, saving costs on broken ports/warranty repairs, and cutting down electronic waste by extending device lifespans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <h2>Interactive Analysis (Click Questions to Expand)</h2>
+
+      <h3>3. Analysis of Potential Benefits</h3>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">How does this technology benefit its users? <span>+</span></div>
+        <div class="qa-answer">It makes charging totally effortless because the magnets pull your device into the exact right spot every time.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What advantages does this offer over existing methods? <span>+</span></div>
+        <div class="qa-answer">It stops up to 40% of energy from being wasted as heat compared to old wireless chargers that easily got misaligned.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">How can this technology improve efficiency or productivity? <span>+</span></div>
+        <div class="qa-answer">It cuts down charging times and lets you mount your device to docks or car mounts with a single snap.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">Are there any long-term benefits? <span>+</span></div>
+        <div class="qa-answer">Because it keeps your battery cool and avoids port wear, your device's overall lifespan is significantly extended.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">How can this technology benefit society at large? <span>+</span></div>
+        <div class="qa-answer">Universal magnetic standards mean less electronic waste from broken cables and fewer thrown-away phones.</div>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">4. Analysis of Possible Adverse Impacts</h3>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What are potential negative effects on users? <span>+</span></div>
+        <div class="qa-answer">Cheap or uncertified magnetic chargers can still overheat your phone battery or charge much slower than a fast cable.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">Could this have adverse effects on non-users or the public? <span>+</span></div>
+        <div class="qa-answer">The strong magnets in these chargers can interfere with nearby medical pacemakers or wipe magnetic stripe cards if held too close.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">Are there any ethical concerns associated with this technology? <span>+</span></div>
+        <div class="qa-answer">Mining the rare-earth metals needed for neodymium magnets often involves severe environmental pollution and poor working conditions in developing countries.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">Could this technology lead to job displacement? <span>+</span></div>
+        <div class="qa-answer">As ports disappear and wireless assembly becomes automated, traditional cable manufacturing jobs might shrink over time.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What environmental impacts might result from production/use? <span>+</span></div>
+        <div class="qa-answer">Extracting rare-earth elements creates toxic chemical runoff and radioactive waste tailings if the metals aren't recycled properly.</div>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">5. Analysis of Likely Impacts and Potential</h3>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What is the current market adoption status? <span>+</span></div>
+        <div class="qa-answer">It’s becoming the industry standard, with over 1,500 certified Qi2 magnetic products hitting the market for both Apple and Android devices.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What are the future possibilities and potential innovations? <span>+</span></div>
+        <div class="qa-answer">It will likely expand into high-power charging pads that automatically power up electric vehicles, power tools, and medical implants.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">How might this change how we live or work in 5-10 years? <span>+</span></div>
+        <div class="qa-answer">We'll see invisible charging pads built into everyday coffee shop tables, office desks, and car consoles, so you never have to carry a cord again.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">What challenges or barriers does it face? <span>+</span></div>
+        <div class="qa-answer">Higher production costs for magnetic components and energy loss compared to direct wired cables are still big hurdles.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question" onclick="toggleQA(this)">How is this technology perceived globally? <span>+</span></div>
+        <div class="qa-answer">It's widely embraced in North America and Asia for consumer tech, while Europe heavily pushes it to reduce e-waste under strict charger directives.</div>
+      </div>
+    </section>
+
+    <section id="references">
+      <h2>References (APA 7th Edition)</h2>
+      <ul class="reference-list">
+        <li>Aircharge. (2024). <em>Nissan introduces Qi2 wireless charging in cars</em>. <a href="https://www.air-charge.com/news/289/19/Nissan-Introduces-Qi2-Wireless-Charging-in-Cars" target="_blank">https://www.air-charge.com/news/289/19/Nissan-Introduces-Qi2-Wireless-Charging-in-Cars</a></li>
+        <li>Apple Inc. (2020, October 13). <em>Apple introduces iPhone 12 and iPhone 12 mini</em>. Apple Newsroom. <a href="https://www.apple.com/newsroom/2020/10/apple-introduces-iphone-12-and-iphone-12-mini/" target="_blank">https://www.apple.com/newsroom/2020/10/apple-introduces-iphone-12-and-iphone-12-mini/</a></li>
+        <li>Apple Inc. (2023, October 24). <em>How to use your MagSafe charger with iPhone</em>. Apple Support. <a href="https://support.apple.com/en-us/105047" target="_blank">https://support.apple.com/en-us/105047</a></li>
+        <li>Apple Inc. (2024, May 22). <em>How to use MagSafe Duo charger with your iPhone and Apple Watch</em>. Apple Support. <a href="https://support.apple.com/en-us/111812" target="_blank">https://support.apple.com/en-us/111812</a></li>
+        <li>Belkin International. (2023, November 15). <em>What is Qi2 wireless charging and why you want it</em>. Belkin Blog. <a href="https://www.belkin.com/company/blog/what-is-qi2-wireless-charging-and-why-you-want-it/" target="_blank">https://www.belkin.com/company/blog/what-is-qi2-wireless-charging-and-why-you-want-it/</a></li>
+        <li>European Commission. (2022). <em>One common charging solution for all</em>. Directorate-General for Internal Market, Industry, Entrepreneurship and SMEs. <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red/one-common-charging-solution-all_en" target="_blank">https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red/one-common-charging-solution-all_en</a></li>
+        <li>History of Simple Things. (2021, March 12). <em>How do wireless phone chargers work?</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=CvXJes3BREM" target="_blank">https://www.youtube.com/watch?v=CvXJes3BREM</a></li>
+        <li>iFixit. (2020, October 22). <em>MagSafe teardown: What is inside Apple's magnetic charger</em>. <a href="https://www.ifixit.com/News/45319/magsafe-teardown-what-is-inside-apples-magnetic-charger" target="_blank">https://www.ifixit.com/News/45319/magsafe-teardown-what-is-inside-apples-magnetic-charger</a></li>
+        <li>Khan, M. A., & Raj, A. (2020). Wireless power transfer for implanted medical applications. <em>Energies</em>, <em>13</em>(11), Article 2837. <a href="https://www.mdpi.com/1996-1073/13/11/2837" target="_blank">https://www.mdpi.com/1996-1073/13/11/2837</a></li>
+        <li>Mi, C. (2016). <em>Wireless power transfer for electric vehicle applications</em>. San Diego State University. <a href="https://chrismi.sdsu.edu/publications/090.pdf" target="_blank">https://chrismi.sdsu.edu/publications/090.pdf</a></li>
+        <li>Monash University. (n.d.). <em>Magnetic flux and Faraday’s law of electromagnetic induction</em>. Physics Department. <a href="https://www.monash.edu/student-academic-success/physics/generation-and-transmission-of-electricity/magnetic-flux-and-faradays-law" target="_blank">https://www.monash.edu/student-academic-success/physics/generation-and-transmission-of-electricity/magnetic-flux-and-faradays-law</a></li>
+        <li>Saha, S. (2021, June 14). Not so green technology: The complicated legacy of rare earth mining. <em>Harvard International Review</em>. <a href="https://hir.harvard.edu/not-so-green-technology-the-complicated-legacy-of-rare-earth-mining/" target="_blank">https://hir.harvard.edu/not-so-green-technology-the-complicated-legacy-of-rare-earth-mining/</a></li>
+        <li>Wireless Power Consortium. (2023). <em>Qi wireless charging standard</em>. <a href="https://www.wirelesspowerconsortium.com/standards/qi-wireless-charging/" target="_blank">https://www.wirelesspowerconsortium.com/standards/qi-wireless-charging/</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Interactive Research Project on Magnetic Charging Technology</p>
+  </footer>
+
+  <script>
+    // Tab Switching Function
+    function switchTab(tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-btn');
+      
+      contents.forEach(content => content.classList.remove('active'));
+      buttons.forEach(button => button.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    // Toggle Collapsible Q&A
+    function toggleQA(element) {
+      const parent = element.parentElement;
+      const span = element.querySelector('span');
+      parent.classList.toggle('open');
+      span.textContent = parent.classList.contains('open') ? '−' : '+';
+    }
+  </script>
+
+</body>
+</html>
