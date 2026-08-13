@@ -118,6 +118,26 @@
       color: var(--primary);
     }
 
+    /* Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* Tabs */
     .tab-buttons {
       display: flex;
@@ -215,7 +235,7 @@
       display: block;
     }
 
-    /* References */
+    /* References & Code Block */
     .reference-list {
       list-style-type: none;
     }
@@ -230,6 +250,28 @@
     .reference-list a {
       color: var(--primary);
       word-break: break-all;
+    }
+
+    .prompt-box {
+      background: #f0f4f8;
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-style: italic;
+      color: #333;
+    }
+
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      max-height: 250px;
     }
 
     /* Footer */
@@ -253,6 +295,7 @@
       <div class="logo">Magnetic Charging Tech</div>
       <nav>
         <a href="#overview">Overview</a>
+        <a href="#video">Video & Summary</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#materials">Materials & Developers</a>
         <a href="#applications">Applications</a>
@@ -269,6 +312,33 @@
       <h1>Magnetic Charging Technology</h1>
       <p>Magnetic charging uses strong magnets to align power transmitters with device receivers, snapping right into position automatically to allow fast, safe, and effortless battery charging without relying on a traditional plug-in physical port.</p>
     </div>
+
+    <section id="video">
+      <h2>Video Overview & Key Research Points</h2>
+      <p>Watch the explanatory video below detailing electromagnetic induction, followed by key takeaway points from the core research document.</p>
+      
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/CvXJes3BREM" title="How Do Wireless Phone Chargers Work?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="grid" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Core Mechanisms</h3>
+          <ul>
+            <li><strong>Wired Magnetic (Pogo Pins):</strong> Direct metal contact held by Neodymium magnets (e.g., Apple MagSafe for Mac).</li>
+            <li><strong>Wireless Magnetic (Induction):</strong> Copper coils transfer energy wirelessly through magnetic field pulses.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Key Innovations</h3>
+          <ul>
+            <li>Eliminates energy loss caused by misaligned coils (cuts up to 40% wasted heat).</li>
+            <li>Prevents port/cable damage and removes dangerous trip hazards.</li>
+            <li>Evolving into universal standards like <strong>Qi2</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <section id="how-it-works">
       <h2>How The Technology Works</h2>
@@ -498,7 +568,8 @@
     </section>
 
     <section id="references">
-      <h2>References (APA 7th Edition)</h2>
+      <h2>References & Acknowledgements</h2>
+      
       <ul class="reference-list">
         <li>Aircharge. (2024). <em>Nissan introduces Qi2 wireless charging in cars</em>. <a href="https://www.air-charge.com/news/289/19/Nissan-Introduces-Qi2-Wireless-Charging-in-Cars" target="_blank">https://www.air-charge.com/news/289/19/Nissan-Introduces-Qi2-Wireless-Charging-in-Cars</a></li>
         <li>Apple Inc. (2020, October 13). <em>Apple introduces iPhone 12 and iPhone 12 mini</em>. Apple Newsroom. <a href="https://www.apple.com/newsroom/2020/10/apple-introduces-iphone-12-and-iphone-12-mini/" target="_blank">https://www.apple.com/newsroom/2020/10/apple-introduces-iphone-12-and-iphone-12-mini/</a></li>
@@ -514,6 +585,30 @@
         <li>Saha, S. (2021, June 14). Not so green technology: The complicated legacy of rare earth mining. <em>Harvard International Review</em>. <a href="https://hir.harvard.edu/not-so-green-technology-the-complicated-legacy-of-rare-earth-mining/" target="_blank">https://hir.harvard.edu/not-so-green-technology-the-complicated-legacy-of-rare-earth-mining/</a></li>
         <li>Wireless Power Consortium. (2023). <em>Qi wireless charging standard</em>. <a href="https://www.wirelesspowerconsortium.com/standards/qi-wireless-charging/" target="_blank">https://www.wirelesspowerconsortium.com/standards/qi-wireless-charging/</a></li>
       </ul>
+
+      <h3 style="margin-top: 1.5rem;">Use of AI & Generative Prompt Citation</h3>
+      <p>This interactive web application structure was created with AI assistance using the following specified prompt:</p>
+      
+      <div class="prompt-box">
+        "So this is my document, i want you make a informative website, basicaly that explains how magnetic charging works, only use the information form this my doc that i shared with you and make the website interactive and make it possible that i can share that website or publish it and at the in the website use my referances at the bottom"
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">Source Code Reference</h3>
+      <div class="code-block">
+        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Magnetic Charging Technology&lt;/title&gt;
+  &lt;!-- Interactive CSS & HTML Web Application --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Website Source Content --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+      </div>
     </section>
 
   </div>
